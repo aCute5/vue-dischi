@@ -1,10 +1,11 @@
 <template>
   <div class="container-fluid">
-    <div v-if="arrDiscs" class="row">
+    <div v-if="arrDiscs.includes(pushvalue)" class="row">
       <CardDisc
         v-for="Objdisc in arrDiscs"
         :key="Objdisc.poster"
         :disc="Objdisc"
+        :pushvalue="Objdic.genre"
       ></CardDisc>
     </div>
     <div v-else class="loading">
@@ -53,13 +54,5 @@ export default {
   font-size: 120px;
   color: white;
   animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>

@@ -18,6 +18,7 @@
 <script>
 export default {
   name: "CardDisc",
+  components: {},
   props: {
     disc: Object,
   },

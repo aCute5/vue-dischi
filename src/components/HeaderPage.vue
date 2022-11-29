@@ -8,12 +8,18 @@
         height="50"
       />
     </a>
+    <search-bar @pushvalue="$emit('pushvalue', valueGenre)"></search-bar>
   </div>
 </template>
 
 <script>
+import SearchBar from "@/components/SearchBar.vue";
+
 export default {
   name: "HeaderPage",
+  components: {
+    SearchBar,
+  },
 };
 </script>
 

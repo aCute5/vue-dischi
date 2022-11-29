@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-page></header-page>
+    <header-page @pushvalue=""></header-page>
     <MainPage />
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
   components: {
     MainPage,
     HeaderPage,
+  },
+  props: {
+    filter: String,
   },
 };
 </script>
