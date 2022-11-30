@@ -8,17 +8,30 @@
         height="50"
       />
     </a>
-    <search-bar @pushvalue="$emit('pushvalue', valueGenre)"></search-bar>
+    <label for="genres">
+      <select
+        name="genres"
+        v-model="GenreStr"
+        id="genres"
+        @change="$emit('selectedGenre', GenreString)"
+      >
+        <option value="all">all</option>
+        <option value="rock">rock</option>
+        <option value="jazz">jazz</option>
+        <option value="pop">pop</option>
+        <option value="metal">metal</option>
+      </select>
+    </label>
   </div>
 </template>
 
 <script>
-import SearchBar from "@/components/SearchBar.vue";
-
 export default {
   name: "HeaderPage",
-  components: {
-    SearchBar,
+  data() {
+    return {
+      GenreString: "all",
+    };
   },
 };
 </script>

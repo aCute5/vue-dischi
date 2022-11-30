@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div v-if="arrDiscs.includes(pushvalue)" class="row">
+    <div v-if="arrDiscs.includes(stringValue)" class="row">
       <CardDisc
         v-for="Objdisc in arrDiscs"
         :key="Objdisc.poster"
@@ -19,6 +19,9 @@ import axios from "axios";
 import CardDisc from "@/components/CardDisc.vue";
 export default {
   name: "MainPage",
+  props: {
+    stringValue: String,
+  },
   components: {
     CardDisc,
   },

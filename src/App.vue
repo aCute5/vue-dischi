@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-page @pushvalue=""></header-page>
-    <MainPage />
+    <header-page @selectedGenre="newGenre"></header-page>
+    <MainPage :stringValue="searchString" />
   </div>
 </template>
 
@@ -15,8 +15,15 @@ export default {
     MainPage,
     HeaderPage,
   },
-  props: {
-    filter: String,
+  data() {
+    return {
+      searchString: "all",
+    };
+  },
+  methods: {
+    newGenre(valore) {
+      this.searchString = valore;
+    },
   },
 };
 </script>
